@@ -8,7 +8,7 @@ SELECT p FROM ProductPrice p WHERE p.product_id = :product_id AND p.timestamp = 
 UPDATE ProductPrice p SET p.price = :price WHERE p.product_id = :product_id AND p.timestamp = :timestamp
 ```
 3.新增
-透過hibernate用save存入
+- 透過hibernate用save存入
 
 4.刪除
 ```sql
