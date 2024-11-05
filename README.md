@@ -1,4 +1,4 @@
-## CRUD 功能
+## CRUD SQL語法
 1.查詢
 ```sql
 SELECT p FROM ProductPrice p WHERE p.product_id = :product_id AND p.timestamp = :timestamp
