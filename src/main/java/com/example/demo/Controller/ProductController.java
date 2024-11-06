@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.google.gson.Gson;
 import com.example.demo.Bean.*;
 import com.example.demo.model.*;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,12 +37,7 @@ public class ProductController {
         // System.out.println(raw_product.getStatusCode());
         // System.out.println(raw_product.getMessage());
 
-        ProductInfo product = new ProductInfo();
-        product.setName(raw_product.getData().get(0).getName());
-        product.setProductid(raw_product.getData().get(0).getId());
-        product.setShortName(raw_product.getData().get(0).getShortName());
-        product.setDataGrouping(raw_product.getData().get(0).isDataGrouping());
-        productService.saveProduct(product);
+        productService.insertProduct(raw_product);
 
         List<List<Double>> lists = raw_product.getData().get(0).getData();
         for(List<Double> p:lists){

@@ -1,0 +1,28 @@
+services:
+  cathy-mysql-test:
+    image: mysql:8.0
+    container_name: cathy-mysql-test
+    environment:
+      MYSQL_ROOT_PASSWORD: 610520Jjkk++
+      MYSQL_DATABASE: cathy
+      MYSQL_USER: jackpot
+      MYSQL_PASSWORD: 610520Jjkk++
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql  
+
+  cathy-spring-test:
+    image: cathy-spring
+    container_name: cathy-spring-test
+    ports:
+      - "8080:8080"  
+    depends_on:
+      - cathy-mysql-test
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://cathy-mysql-test:3306/cathy
+      SPRING_DATASOURCE_USERNAME: jackpot
+      SPRING_DATASOURCE_PASSWORD: 610520Jjkk++
+
+volumes:
+  mysql_data:

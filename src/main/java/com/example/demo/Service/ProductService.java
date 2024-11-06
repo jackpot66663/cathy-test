@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Repo.*;
 import com.example.demo.model.*;
+import com.example.demo.Bean.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -53,5 +54,14 @@ public class ProductService {
         }else{
             return "timestamp didn't exist";
         }
+    }
+
+    public void insertProduct(Product raw_product){
+        ProductInfo product = new ProductInfo();
+        product.setName(raw_product.getData().get(0).getName());
+        product.setProductid(raw_product.getData().get(0).getId());
+        product.setShortName(raw_product.getData().get(0).getShortName());
+        product.setDataGrouping(raw_product.getData().get(0).isDataGrouping());
+        saveProduct(product);
     }
 }
