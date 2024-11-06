@@ -1,5 +1,5 @@
 ## API 資料 /api/getData
-- 宣告一 RequestWrapper 發送符合api網址之格式之請求
+- 宣告一 RequestWrapper 發送符合api格式之請求
 - 獲得後端資料
 - 寫入DB
 ## 架構
