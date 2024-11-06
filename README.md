@@ -1,3 +1,7 @@
+## API 資料 /api/getData
+- 宣告一 RequestWrapper 發送符合api網址之格式之請求
+- 獲得後端資料
+- 寫入DB
 ## 架構
 - Controller : 控制層，處理網頁請求，並調用對應服務層
 - Service : 服務層，處理Product所有的業務邏輯
